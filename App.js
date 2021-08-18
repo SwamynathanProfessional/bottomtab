@@ -1,21 +1,32 @@
 import * as React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {useState} from 'react';
+import {View, Text, StyleSheet, TouchableOpacity, Alert} from 'react-native';
+
+import GoalInput from './screens/Goalinput';
 
 function App() {
   return (
-    <View>
-      <View style={{flex: 1, backgroundColor: 'red'}} />
-      <View style={{flex: 2, backgroundColor: 'dark orange'}} />
-      <View style={{flex: 2, backgroundColor: 'green'}} />
-      <View />
+    <View style={styles.container}>
+      <GoalInput title={'users'} name={'users'} />
+      <GoalInput title={'id-badge'} name={'profile'} />
+      <GoalInput title={'camera'} name={'camera'} />
+      <GoalInput title={'video'} name={'video'} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 20,
+    width: '100%',
+    height: '10%',
+    // flex: 1,
+    alignItems: 'center',
+
+    alignContent: 'space-between',
+    position: 'absolute',
+    bottom: 0,
+    flexDirection: 'row',
+    backgroundColor: 'blue',
   },
 });
 export default App;
