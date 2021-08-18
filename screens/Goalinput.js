@@ -27,6 +27,7 @@ const GoalInput = props => {
     }
   };
 
+  
   return (
     <View style={styles.box}>
       <View>
