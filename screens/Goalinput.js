@@ -1,5 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
+import {FlatList} from 'react-native';
+import {CATEGORIES} from '../data/dummy-data';
 import {
   View,
   Text,
