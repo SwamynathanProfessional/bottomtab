@@ -1,43 +1,25 @@
 import React from 'react';
 import {useState} from 'react';
-import {FlatList} from 'react-native';
-import {CATEGORIES} from '../data/dummy-data';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableHighlight,
-  TouchableOpacity,
-} from 'react-native';
+
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 const GoalInput = props => {
   const [size, setsize] = useState(25);
   const [click, setclick] = useState(false);
   const [colour, setcolour] = useState('#ff8c00');
 
-  const onConfirm = () => {
-    if (click === false) {
-      setclick(true);
-      setsize(35);
-      setcolour('#ff8');
-    } else {
-      setclick(false);
-      setsize(25);
-      setcolour('#ff8c00');
-    }
-  };
+ 
 
-  
   return (
     <View style={styles.box}>
-      <View>
-        <TouchableOpacity onPress={onConfirm}>
-          <View style={{alignItems: 'center'}}>
-            <FontAwesome5 name={props.title} size={size} color={colour} />
-          </View>
-        </TouchableOpacity>
-        <Text style={styles.text}>{props.name}</Text>
-      </View>
+      <TouchableOpacity onPress={props.onRestart(props.idno)}>
+        <View style={{alignItems: 'center'}}>
+          <FontAwesome5 name={props.title} size={size} color={colour} />
+        </View>
+      </TouchableOpacity>
+      <Text title={props.idno} style={styles.text}>
+        {props.name}
+      </Text>
     </View>
   );
 };
